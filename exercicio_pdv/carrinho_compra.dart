@@ -1,9 +1,9 @@
-import 'Item_compra.dart';
+import 'item_compra.dart';
 
 class CarrinhoCompra{
     List<ItemCompra> itens = [];
 
-    void adicionarItem(ItemCompra item ){
+    void adicionarItem(ItemCompra item){
         itens.add(item);
     }
 
@@ -16,15 +16,15 @@ class CarrinhoCompra{
     }
 
     double calcularDesconto(){
-        double total = calcularTotal;
+        double total = calcularTotal();
         if(total >= 200){
-            return  total * 0.1; //10%
+            return total * 0.1; //10%
         }
         return 0;
     }
 
     double calcularValorFinal(){
-        return  calcularTotal() - calcularDesconto();
+        return calcularTotal() - calcularDesconto();
     }
 
     bool estaVazio(){
@@ -32,6 +32,6 @@ class CarrinhoCompra{
     }
 
     int quantidadeItens(){
-        return  itens.length;
+        return itens.length;
     }
 }
